@@ -1,0 +1,8 @@
+# nikad ne objavljuj izvorni Excel ni nesifrovane kopije
+*.xlsx
+*.xls
+*_kopija_*.json
+_test*
+__pycache__/
+.DS_Store
+Thumbs.db

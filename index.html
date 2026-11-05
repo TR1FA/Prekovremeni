@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="sr-Latn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Prekovremeni</title>
+<meta name="description" content="Evidencija prekovremenih sati — unos, mjesečni pregled i izvoz u Excel.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1F3864">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Prekovremeni">
+<script>try{var t=localStorage.getItem('pk_theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="styles.css">
+<script type="module" src="js/app.js"></script>
+</head>
+<body>
+
+<section id="login" class="login" hidden>
+  <div class="login-card">
+    <div class="login-top">
+      <img src="icons/icon-192.png" alt="">
+      <h1>Prekovremeni</h1>
+      <p>Evidencija prekovremenih sati · Invenda Systems</p>
+    </div>
+    <form id="loginForm" class="login-form" autocomplete="on">
+      <label class="f">Zaposleni
+        <select id="loginUser" class="in" name="username" required></select>
+      </label>
+      <label class="f">Šifra
+        <span class="pw-wrap">
+          <input id="loginPw" class="in" type="password" name="password" autocomplete="current-password" required>
+          <button type="button" id="pwEye" class="icon-btn" aria-label="Prikaži šifru"></button>
+        </span>
+      </label>
+      <label class="check"><input type="checkbox" id="loginRemember" checked> Zapamti me na ovom uređaju (30 dana)</label>
+      <p id="loginErr" class="login-err" role="alert"></p>
+      <button id="loginBtn" class="btn primary" type="submit">Prijava</button>
+    </form>
+    <div class="login-foot"><span id="loginVer"></span></div>
+  </div>
+</section>
+
+<div id="shell" hidden>
+  <header class="topbar">
+    <div class="topbar-in">
+      <div class="brand">
+        <img src="icons/icon-192.png" alt="">
+        <div><b>Prekovremeni</b><small id="who"></small></div>
+      </div>
+      <button id="syncChip" class="sync-chip" type="button" data-act="sync"><span class="dot"></span><span class="lbl"></span></button>
+      <button id="themeBtn" class="icon-btn" type="button" data-act="theme" aria-label="Promijeni temu"></button>
+      <button id="logoutBtn" class="icon-btn" type="button" data-act="logout" aria-label="Odjava" title="Odjava"></button>
+    </div>
+  </header>
+  <nav class="tabs" id="tabs" aria-label="Glavni meni"></nav>
+  <main id="view"></main>
+</div>
+
+<div id="print" aria-hidden="true"></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<input type="file" id="importFile" accept=".json,application/json" hidden>
+</body>
+</html>
